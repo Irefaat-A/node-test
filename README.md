@@ -27,6 +27,7 @@
 
 ## **Step 4:**
  **Register Tshirt:**
+ 
     * postman :  
         - URL - http://localhost:8080/rest/1.0/tshirt/{random id}
         - METHOD - PUT
@@ -42,22 +43,52 @@
           -d 'color=blue&size=S&label=Levi'\''s&undefined=' 
 
  **Get Tshirt:**
+ 
     * postman : 
         - URL - http://localhost:8080/rest/1.0/tshirt/{random id}
         - METHOD - GET
-        - Content-Type - application/x-www-form-urlencoded
-        - color=bluesize=Slabel=Levi'sundefined=undefined     
     
     * cURL : 
         curl -X GET \
           http://localhost:8080/rest/1.0/tshirt/9q4b2ac227743b46009104be \
-          -H 'Content-Type: application/x-www-form-urlencoded' \
-          -H 'Postman-Token: d0812e6a-f96f-4f2f-8e72-fe9ff71677ce' \
-          -H 'cache-control: no-cache' \
-          -d 'color=blue&size=S&label=Levi'\''s&undefined=' 
-    
-## Additional Questions
 
+ **Get Tshirt Location History:**
+ 
+    * postman : 
+        - URL - http://localhost:8080/rest/1.0/tshirt/{random id}/history
+        - METHOD - GET
+    
+    * cURL : 
+        curl -X GET \
+          http://localhost:8080/rest/1.0/tshirt/9q4b2ac227743b46009104be/history \
+
+ **Register Box:**
+ 
+    * postman : 
+        - URL - http://localhost:8080/rest/1.0/box/{random id}
+        - METHOD - PUT
+        - Content-Type - application/x-www-form-urlencoded
+        - tshirtRfids=9q4b2ac227743b46009104betshirtRfids=8q4b2ac227743b46009104beundefined=undefined     
+    
+    * cURL : 
+        curl -X PUT \
+        http://localhost:8080/rest/1.0/box/9q4b2ac227743b46009104be \
+        -H 'Content-Type: application/x-www-form-urlencoded' \
+        -H 'Postman-Token: fbf595bd-4181-4362-8b3c-1e58e826db02' \
+        -H 'cache-control: no-cache' \
+        -d 'tshirtRfids=9q4b2ac227743b46009104be&tshirtRfids=8q4b2ac227743b46009104be&undefined='    
+
+ **Get Box:**
+ 
+    * postman : 
+        - URL - http://localhost:8080/rest/1.0/box/{random id}
+        - METHOD - GET
+    
+    * cURL : 
+        curl -X PUT \
+        http://localhost:8080/rest/1.0/box/9q4b2ac227743b46009104be \
+
+## Additional Questions
 1. Describe your solution in a few words (expect an experienced programmer reading it) and describe
    your choice of libraries and/or patterns.
 2. How do you handle transactions?
@@ -69,7 +100,7 @@
 
 ## Answers
 1. I Structured the application specific to the various domains. 
-   This allows for seperation of concerns, lose coupling, reduce complexity and makes it easy to debug.  
+   This allows for separation of concerns, lose coupling, reduce complexity and makes it easy to debug.  
    I chose express for the routing it is simple elegant when specifying routes.
    I chose joi for the validation easy and clean implementation for doing validation.
 2. I chose mongoose to do the transaction. It have a clean implementation for CRUD operation. 

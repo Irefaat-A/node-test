@@ -8,3 +8,10 @@ exports.validateRegisterTshirtRequest = function (registerTshirtRequest){
     }
     return Joi.validate(registerTshirtRequest, registerTshirtRequestSchema);
 }
+
+exports.validateRegisterBoxRequest = function (registerBoxRequest){
+    const registerBoxRequestSchema = {
+         tshirtRfids : Joi.array().required()
+    }
+    return Joi.validate(registerBoxRequest, registerBoxRequestSchema);
+}
