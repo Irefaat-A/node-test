@@ -55,7 +55,21 @@ exports.getTshirt = function (req, res) {
             return;
         }
         res.json({
-            message: 'tShirt details loading..',
+            message: 'Information about the t-shirt',
+            data: tShirtDto
+        });
+    });
+};
+
+exports.getTshirtLocationHistory = function (req, res) {
+    TShirtDto.find({'rfid': req.params.rfid}, function (err, tShirtDto) {
+        if (err){
+            console.log("Unable to access the tshirts db. ERROR :: " + err);
+            res.send(err);
+            return;
+        }
+        res.json({
+            message: 'Information about the t-shirt historical location',
             data: tShirtDto
         });
     });

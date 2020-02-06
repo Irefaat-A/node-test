@@ -13,7 +13,7 @@ router.route('/tshirt/:rfid')
     .put(TShirtController.registerTshirt);
 
 router.route('/tshirt/:rfid/history')
-    .get(TShirtController.getTshirt);
+    .get(TShirtController.getTshirtLocationHistory);
 
 router.route('/box/:rfid')
     .get(TShirtController.getTshirt)
