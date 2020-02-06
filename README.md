@@ -21,6 +21,8 @@
 * npm install express
 * npm install joi
 * npm install mongoose
+* npm install jest
+* npm install supertest
 
 ## **Step 2:**
 * Open your terminal and run the following, 'mongod'. Mongo should start up. Otherwise consult the mongo DB guide.
@@ -31,6 +33,9 @@
 * You should see the server start up on port 8080.
 
 ## **Step 4:**
+* To run the test. Open your terminal in the project directory and run the following, 'npm run test'.
+
+## **Step 5:**
  **Register Tshirt:**
  
     * postman :  
