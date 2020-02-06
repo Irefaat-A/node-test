@@ -3,8 +3,13 @@
 ## Setup instruction
 
 ## #_NB_
-    This project requires you to have mongo DB installed on your computer. If you dont have mongo DB installed please see link below:
+    This project requires you to have:
+     node installed on your computer. If you dont have node installed please see link below.
+     npm installed on your computer. If you dont have npm installed please see link below.
+     mongo DB installed on your computer. If you dont have mongo DB installed please see link below:
 
+        * https://nodejs.org/en/download/
+        * https://docs.npmjs.com/cli/install
         * https://docs.mongodb.com/manual/installation/
     
     You also need postman to be able to execute the api's. Alternativetly you can use cURL to execute the api's
