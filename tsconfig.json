@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "es2016",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "removeComments": true,
+    "outDir": "./lib",
+    "experimentalDecorators": true,
+    "declaration": true,
+    "emitDecoratorMetadata": true,
+    "noImplicitAny": false,
+    "preserveConstEnums": true,
+    "skipLibCheck": true,
+    "typeRoots": [
+      "node_modules/@types"
+    ]
+  },
+  "include": [
+    "src/**/*",
+    "index.d.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
