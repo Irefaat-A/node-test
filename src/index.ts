@@ -13,7 +13,6 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 mongoose.connect('mongodb://localhost/node-test', { useNewUrlParser: true});
 
-
 var db = mongoose.connection;
     if(!db) {
         console.log("Error connecting db")

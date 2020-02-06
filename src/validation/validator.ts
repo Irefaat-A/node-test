@@ -15,3 +15,11 @@ exports.validateRegisterBoxRequest = function (registerBoxRequest){
     }
     return Joi.validate(registerBoxRequest, registerBoxRequestSchema);
 }
+
+exports.validateTrackRfidRequest = function (trackRfidRequest){
+    const trackRfidRequestSchema = {
+         lastLocation : Joi.string().required()
+    }
+    return Joi.validate(trackRfidRequest, trackRfidRequestSchema);
+}
+

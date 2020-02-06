@@ -3,14 +3,14 @@
 ## Setup instruction
 
 ## #_NB_
-    This project requires you to have mongo DB installed on your computer. If you dont have mongo installed please see link below:
+    This project requires you to have mongo DB installed on your computer. If you dont have mongo DB installed please see link below:
 
         * https://docs.mongodb.com/manual/installation/
     
-    You also need postman to be able to excute the api's. Alternativetly you can use cURL to execute the api's
+    You also need postman to be able to execute the api's. Alternativetly you can use cURL to execute the api's
 
 ## **Step 1:**
-* git clone 
+* git clone https://github.com/IrefaatA/node-test.git
 * npm install (in the project directory).
 * npm install body-parser
 * npm install express
@@ -88,6 +88,22 @@
         curl -X PUT \
         http://localhost:8080/rest/1.0/box/9q4b2ac227743b46009104be \
 
+ **Track Rfid:**
+ 
+    * postman : 
+        - URL - http://localhost:8080/rest/1.0/box/{random id}
+        - METHOD - POST 
+        - Content-Type - application/x-www-form-urlencoded
+        - lastLocation=Cape+Townundefined=undefined     
+        
+    * cURL : 
+        curl -X POST \
+        http://localhost:8080/rest/1.0/rfid/9q4b2ac227743b46009104be \
+        -H 'Content-Type: application/x-www-form-urlencoded' \
+        -H 'Postman-Token: 6b8d56d0-3533-4583-b10c-bf4059499337' \
+        -H 'cache-control: no-cache' \
+        -d 'lastLocation=Cape%20Town&undefined='
+
 ## Additional Questions
 1. Describe your solution in a few words (expect an experienced programmer reading it) and describe
    your choice of libraries and/or patterns.
@@ -107,9 +123,9 @@
    Which makes it easy to read and debug.
 3. Depends if you want the application accessible globally then I would host it in
    (Amazon, Digital Ocean etc. ). Easy to scale.  
-4. I used console.log i'm aware it's not most ideal. 
+4. I used console.log I'm aware it's not most ideal. 
     However I would write a custom logging function which would print whatever the the debug level is set to.
-5. Works on a Single threaded, It waits for events, uses an EventEmitter class to bind events to listeners,
-   it triggers a callback when an event is detected which all happens async and its non blocking.
+5. Works on a Single thread, it waits for events, uses an EventEmitter class to bind events to listeners,
+   it triggers a callback when an event is detected which all happens async and it's non blocking.
 6. Errors I log out and send back to inform that something went wrong. 
 7. I prefer config to isolated from the implementation and must be served from a resource file. 

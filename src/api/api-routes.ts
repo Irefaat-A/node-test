@@ -1,6 +1,7 @@
 let router = require('express').Router();
 var TShirtController = require('./../tshirt/controller/tShirtController.ts');
 var BoxController = require('./../box/controller/boxController.ts');
+var TrackingService = require('./../service/trackingService.ts');
 
 router.get('/', function (req, res) {
     res.json({
@@ -19,5 +20,8 @@ router.route('/tshirt/:rfid/history')
 router.route('/box/:rfid')
     .get(BoxController.getBox)
     .put(BoxController.registerBox);
+
+router.route('/rfid/:rfid')
+    .post(TrackingService.trackRfid);
 
 module.exports = router;
